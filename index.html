@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppDost - Your trusted partner for comprehensive IT solutions</title>
+    <style>
+        /* Design System CSS */
+        :root {
+            /* Primitive Color Tokens */
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+
+            /* RGB versions for opacity control */
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+
+            /* Background color tokens (Light Mode) */
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-bg-6: rgba(249, 115, 22, 0.08);
+            --color-bg-7: rgba(236, 72, 153, 0.08);
+            --color-bg-8: rgba(6, 182, 212, 0.08);
+
+            /* Semantic Color Tokens (Light Mode) */
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+            --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+            /* Typography */
+            --font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --letter-spacing-tight: -0.01em;
+
+            /* Spacing */
+            --space-0: 0;
+            --space-1: 1px;
+            --space-2: 2px;
+            --space-4: 4px;
+            --space-6: 6px;
+            --space-8: 8px;
+            --space-10: 10px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-40: 40px;
+            --space-48: 48px;
+            --space-56: 56px;
+            
+            /* Custom scrollbar */
+        }
+        
+        /* Logo animations */
+        .logo-link {
+            opacity: 0;
+            animation: logoFadeIn 0.8s ease-out 0.3s forwards;
+        }
+        
+        @keyframes logoFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-link:hover .logo-icon {
+            filter: drop-shadow(0 0 16px rgba(0, 102, 255, 0.6));
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .logo-icon {
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .logo-link:hover .logo-icon {
+                filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.7));
+            }
+            .logo-icon {
+                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            }
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--color-background);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--color-primary), #8B5CF6);
+            border-radius: 6px;
+            border: 2px solid var(--color-background);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--color-primary-hover), #7c3aed);
+            --space-48: 48px;
+            --space-64: 64px;
+            --space-80: 80px;
+            --space-96: 96px;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            /* Animation */
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Dark mode colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300-rgb: 50, 184, 198;
+                --color-gray-300-rgb: 167, 169, 169;
+                --color-gray-200-rgb: 245, 245, 245;
+
+                --color-bg-1: rgba(29, 78, 216, 0.15);
+                --color-bg-2: rgba(180, 83, 9, 0.15);
+                --color-bg-3: rgba(21, 128, 61, 0.15);
+                --color-bg-4: rgba(185, 28, 28, 0.15);
+                --color-bg-5: rgba(107, 33, 168, 0.15);
+                --color-bg-6: rgba(194, 65, 12, 0.15);
+                --color-bg-7: rgba(190, 24, 93, 0.15);
+                --color-bg-8: rgba(8, 145, 178, 0.15);
+
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-primary-active: var(--color-teal-800);
+                --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+                --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-error: var(--color-red-400);
+                --color-success: var(--color-teal-300);
+                --color-warning: var(--color-orange-400);
+                --color-info: var(--color-gray-300);
+                --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+                --color-btn-primary-text: var(--color-slate-900);
+                --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+                --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+            }
+        }
+
+        /* Base styles */
+        html {
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-tight);
+            color: var(--color-text);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        h1 { font-size: var(--font-size-4xl); }
+        h2 { font-size: var(--font-size-3xl); }
+        h3 { font-size: var(--font-size-2xl); }
+        h4 { font-size: var(--font-size-xl); }
+        h5 { font-size: var(--font-size-lg); }
+        h6 { font-size: var(--font-size-md); }
+
+        p {
+            margin: 0 0 var(--space-16) 0;
+        }
+
+        /* Custom styles */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+
+        .section {
+            padding: var(--space-80) 0;
+        }
+
+        .section-sm {
+            padding: var(--space-64) 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-24);
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--space-24);
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 253, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(94, 82, 64, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: var(--space-32);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(33, 128, 141, 0.3);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .card {
+                background: rgba(38, 40, 40, 0.6);
+                border: 1px solid rgba(119, 124, 124, 0.2);
+            }
+            .card:hover {
+                border-color: rgba(50, 184, 198, 0.4);
+            }
+            #why-choose .card {
+                background: rgba(38, 40, 40, 0.7) !important;
+            }
+            #process .card {
+                background: rgba(38, 40, 40, 0.7) !important;
+            }
+        }
+
+        .service-card {
+            perspective: 1000px;
+            min-height: 450px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .service-card {
+                background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            }
+        }
+
+        .service-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .service-card.flipped .service-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--radius-lg);
+        }
+
+        .service-card-back {
+            transform: rotateY(180deg);
+            background-color: var(--color-surface);
+            padding: var(--space-32);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-12) var(--space-24);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #06B6D4 100%);
+            color: var(--color-btn-primary-text);
+            box-shadow: 0 4px 16px rgba(33, 128, 141, 0.3);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--color-primary-hover) 0%, #0891b2 100%);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(33, 128, 141, 0.4), 0 0 40px rgba(33, 128, 141, 0.2);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: var(--color-secondary);
+            color: var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-secondary-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-secondary);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 253, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(94, 82, 64, 0.1);
+            padding: var(--space-16) 0;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .navbar {
+                background: rgba(38, 40, 40, 0.7);
+                border-bottom: 1px solid rgba(119, 124, 124, 0.2);
+            }
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: var(--space-32);
+        }
+
+        .nav-link {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: all var(--duration-normal) var(--ease-standard);
+            position: relative;
+            padding-bottom: var(--space-4);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width var(--duration-normal) var(--ease-standard);
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: var(--font-size-2xl);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-surface);
+                border-top: 1px solid var(--color-border);
+                flex-direction: column;
+                padding: var(--space-16);
+                gap: var(--space-16);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 50%, #EC4899 100%);
+            color: white;
+            padding: 140px 0 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: var(--space-24);
+            color: white;
+            min-height: 100px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title h2 {
+                font-size: 2rem !important;
+            }
+            #supportButton, #floatingCTA {
+                bottom: 16px;
+            }
+            #supportButton {
+                right: 16px;
+                width: 48px;
+                height: 48px;
+            }
+            #floatingCTA {
+                left: 16px;
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+        }
+
+        .hero h1 .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background: white;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Hero Image Animations */
+        @keyframes heroImageAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes heroFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes heroTilt {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(2deg);
+            }
+            75% {
+                transform: rotate(-2deg);
+            }
+        }
+
+        @keyframes heroPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 102, 255, 0.3),
+                            0 0 40px rgba(139, 92, 246, 0.2),
+                            0 20px 60px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 102, 255, 0.6),
+                            0 0 60px rgba(139, 92, 246, 0.4),
+                            0 0 80px rgba(6, 182, 212, 0.3),
+                            0 25px 70px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        /* Hero image container styles */
+        .hero-image-container {
+            position: relative;
+            border-radius: 24px;
+            overflow: visible;
+            will-change: transform;
+            animation: 
+                heroImageAppear 1.5s ease-out 0.5s both,
+                heroFloat 4s ease-in-out 2s infinite,
+                heroPulse 3s ease-in-out 2s infinite;
+        }
+
+        .hero-image-container:hover {
+            animation: 
+                heroFloat 4s ease-in-out infinite,
+                heroPulse 3s ease-in-out infinite;
+            transform: scale(1.05) translateY(-10px);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image {
+            width: 100%;
+            display: block;
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+
+        /* Gradient overlay with subtle animation */
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(139, 92, 246, 0.1));
+            pointer-events: none;
+            animation: overlayShimmer 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes overlayShimmer {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Decorative floating particles around hero image */
+        .hero-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.6), rgba(139, 92, 246, 0.6));
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 4s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(10px, -15px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        .hero-particle:nth-child(1) { top: 10%; left: -5%; animation-delay: 0s; }
+        .hero-particle:nth-child(2) { top: 30%; right: -5%; animation-delay: 0.5s; }
+        .hero-particle:nth-child(3) { bottom: 20%; left: -3%; animation-delay: 1s; }
+        .hero-particle:nth-child(4) { bottom: 40%; right: -4%; animation-delay: 1.5s; }
+        .hero-particle:nth-child(5) { top: 50%; left: -6%; animation-delay: 2s; }
+        .hero-particle:nth-child(6) { top: 70%; right: -3%; animation-delay: 2.5s; }
+
+        /* Reduce animations on mobile for performance */
+        @media (max-width: 768px) {
+            .hero-image-container {
+                animation: heroImageAppear 1.5s ease-out 0.5s both;
+            }
+            .hero-particle {
+                display: none;
+            }
+        }
+
+        /* Accessibility: Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-container,
+            .hero-image-overlay,
+            .hero-particle {
+                animation: none !important;
+            }
+            .hero-image-container:hover {
+                transform: none !important;
+            }
+        }
+
+        .hero p {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-32);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-16);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-32);
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: var(--space-24);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: var(--space-8);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-16);
+            display: block;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding-left: var(--space-32);
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: var(--space-16);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-primary);
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: var(--space-48);
+            padding: var(--space-24);
+            padding-left: var(--space-48);
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(94, 82, 64, 0.1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .process-step {
+                background: rgba(38, 40, 40, 0.4);
+                border: 1px solid rgba(119, 124, 124, 0.2);
+            }
+        }
+
+        .process-step:hover {
+            transform: translateX(12px) scale(1.02);
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .process-step:hover {
+                background: rgba(38, 40, 40, 0.6);
+            }
+        }
+
+        .process-step:hover::before {
+            transform: scale(1.2);
+            box-shadow: 0 0 0 4px rgba(var(--color-teal-500-rgb), 0.2);
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -var(--space-24);
+            top: 0;
+            width: var(--space-32);
+            height: var(--space-32);
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-24);
+            text-align: center;
+        }
+
+        .tech-item {
+            padding: var(--space-20);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(94, 82, 64, 0.15);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .tech-item {
+                background: rgba(38, 40, 40, 0.5);
+                border: 1px solid rgba(119, 124, 124, 0.2);
+            }
+        }
+
+        .tech-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            border-color: rgba(33, 128, 141, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .tech-item:hover {
+                background: rgba(38, 40, 40, 0.7);
+                border-color: rgba(50, 184, 198, 0.4);
+            }
+        }
+
+        .footer {
+            background: var(--color-charcoal-700);
+            color: var(--color-gray-200);
+            padding: var(--space-64) 0 var(--space-32) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-32);
+            margin-bottom: var(--space-32);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-24);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-16);
+        }
+
+        .social-link {
+            color: var(--color-gray-200);
+            font-size: var(--font-size-xl);
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+
+        .social-link:hover {
+            color: var(--color-primary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-48);
+        }
+        
+        .section-title h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-16);
+        }
+
+        .section-subtitle {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            max-width: 600px;
+            margin: var(--space-16) auto 0;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: var(--color-bg-1);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+        }
+
+        .blog-card img {
+            transition: transform var(--duration-normal) var(--ease-standard);
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background: var(--color-bg-2);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-16);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-card img {
+            border-radius: var(--radius-base);
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.95);
+        }
+        
+        .blog-card:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.05);
+        }
+        
+        .blog-card {
+            overflow: hidden;
+        }
+
+
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s var(--ease-standard);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Crystal Animation Styles */
+        .crystal {
+            position: absolute;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .crystal-diamond {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.2));
+            transform: rotate(45deg);
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+        }
+
+        .crystal-hexagon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(0, 102, 255, 0.2));
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+        }
+
+        .crystal-prism {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86px solid rgba(139, 92, 246, 0.25);
+            filter: drop-shadow(0 8px 32px rgba(139, 92, 246, 0.2));
+            backdrop-filter: blur(4px);
+        }
+
+        .crystal-small {
+            width: 30px !important;
+            height: 30px !important;
+            opacity: 0.6;
+        }
+
+        .crystal-small.crystal-prism {
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 26px solid rgba(139, 92, 246, 0.25);
+        }
+
+        .crystal-large {
+            width: 120px !important;
+            height: 120px !important;
+        }
+
+        .crystal-large.crystal-prism {
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 104px solid rgba(139, 92, 246, 0.25);
+        }
+
+        .crystal-glow {
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 0 80px rgba(118, 75, 162, 0.2);
+        }
+
+        /* Crystal Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, -15px) rotate(180deg); }
+        }
+
+        @keyframes floatDrift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(15px, -10px) rotate(90deg) scale(1.05); }
+            50% { transform: translate(20px, -20px) rotate(180deg) scale(0.95); }
+            75% { transform: translate(10px, -15px) rotate(270deg) scale(1.05); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes rotate360 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+            100% { opacity: 0.3; }
+        }
+
+        .crystal-float { animation: float 12s ease-in-out infinite; }
+        .crystal-float-slow { animation: floatSlow 15s ease-in-out infinite; }
+        .crystal-float-drift { animation: floatDrift 18s ease-in-out infinite; }
+        .crystal-sparkle { animation: sparkle 3s ease-in-out infinite; }
+        .crystal-rotate { animation: rotate360 20s linear infinite; }
+        .crystal-pulse { animation: pulse 4s ease-in-out infinite; }
+        .crystal-shimmer { animation: shimmer 2.5s ease-in-out infinite; }
+
+        /* Service card crystal */
+        .service-card-crystal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(236, 72, 153, 0.3));
+            transform: rotate(45deg);
+            border-radius: 4px;
+            opacity: 0;
+            transition: all 0.4s var(--ease-standard);
+            z-index: 10;
+        }
+
+        .service-card:hover .service-card-crystal {
+            opacity: 1;
+            animation: rotate360 2s linear infinite;
+        }
+
+        /* Stats particle */
+        .stat-crystal {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, rgba(33, 128, 141, 0.5), rgba(50, 184, 198, 0.4));
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Hide crystals on mobile for performance */
+        @media (max-width: 768px) {
+            .crystal-ambient { display: none; }
+            .crystal-hero:not(.crystal-hero-main) { display: none; }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .crystal, .service-card-crystal, .stat-crystal {
+                animation: none !important;
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Floating CTA animation */
+        @keyframes float-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        #floatingCTA.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        #floatingCTA:hover {
+            transform: scale(1.05) translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        #supportButton:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(0, 102, 255, 0.4);
+        }
+        
+        #supportButton:active {
+            transform: scale(0.95);
+        }
+        
+        /* Enhanced stat items */
+        .stat-item {
+            position: relative;
+        }
+        
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, rgba(33, 128, 141, 0.3), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-item:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ambient Floating Crystals -->
+    <div class="crystal crystal-ambient crystal-diamond crystal-small crystal-float-slow" style="top: 15%; left: 10%; opacity: 0.15; z-index: 0; animation-delay: 0s;"></div>
+    <div class="crystal crystal-ambient crystal-hexagon crystal-small crystal-sparkle" style="top: 35%; right: 8%; opacity: 0.2; z-index: 0; animation-delay: 1s; width: 40px; height: 40px;"></div>
+    <div class="crystal crystal-ambient crystal-prism crystal-small crystal-shimmer" style="top: 55%; left: 12%; opacity: 0.18; z-index: 0; animation-delay: 2s;"></div>
+    <div class="crystal crystal-ambient crystal-diamond crystal-small crystal-pulse" style="top: 70%; right: 15%; opacity: 0.16; z-index: 0; animation-delay: 1.5s;"></div>
+    <div class="crystal crystal-ambient crystal-hexagon crystal-small crystal-float" style="top: 85%; left: 18%; opacity: 0.2; z-index: 0; animation-delay: 0.5s; width: 35px; height: 35px;"></div>
+    <div class="crystal crystal-ambient crystal-diamond crystal-small crystal-shimmer" style="top: 25%; right: 20%; opacity: 0.15; z-index: 0; animation-delay: 2.5s;"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" style="position: fixed; inset: 0; background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 50%, #EC4899 100%); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease;">
+        <div style="font-size: 3rem; font-weight: 800; color: white; margin-bottom: var(--space-24); animation: pulse 2s ease-in-out infinite;">AppDost</div>
+        <div style="width: 200px; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; overflow: hidden;">
+            <div style="width: 0%; height: 100%; background: white; border-radius: 2px; animation: loadingBar 2s ease-in-out forwards;"></div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes loadingBar {
+            to { width: 100%; }
+        }
+    </style>
+    
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" style="position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #0066FF, #8B5CF6, #EC4899); z-index: 9999; transition: width 0.1s ease;"></div>
+    
+    <!-- Dark Mode Toggle -->
+    <button id="supportButton" style="position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #0066FF, #8B5CF6); border: none; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); cursor: pointer; z-index: 1001; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);" title="Need Help? Contact Support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;">
+            <path d="M3 11v3a1 1 0 001 1h1a1 1 0 001-1v-3a1 1 0 00-1-1H4a8 8 0 0116 0h-1a1 1 0 00-1 1v3a1 1 0 001 1h1a1 1 0 001-1v-3a9 9 0 00-18 0z"/>
+            <path d="M21 15v2a2 2 0 01-2 2h-1"/>
+        </svg>
+    </button>
+    
+    <!-- Floating CTA Button -->
+    <a href="#contact" id="floatingCTA" style="position: fixed; bottom: 24px; left: 24px; padding: 16px 24px; background: linear-gradient(135deg, #0066FF, #06B6D4); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); z-index: 1001; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateX(-100px); transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);">💬 Get Quote</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#home" class="logo-link" style="text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);" id="logoLink">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);" class="logo-icon">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0066FF"/>
+                                <stop offset="100%" style="stop-color:#06B6D4"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Hexagon with inner tech element -->
+                        <g id="icon">
+                            <path d="M 20 5 L 30 10 L 30 25 L 20 30 L 10 25 L 10 10 Z" 
+                                  fill="url(#logoGradient)" 
+                                  stroke="url(#logoGradient)" 
+                                  stroke-width="2"/>
+                            <path d="M 15 17.5 L 20 15 L 25 17.5 L 25 22.5 L 20 25 L 15 22.5 Z" 
+                                  fill="white" 
+                                  opacity="0.9"/>
+                        </g>
+                    </svg>
+                    <div class="logo" style="background: linear-gradient(135deg, #0066FF 0%, #06B6D4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">AppDost</div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#technologies" class="nav-link">Technologies</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: var(--space-16);">
+                    <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" style="position: relative; overflow: hidden;">
+        <!-- Hero Crystals -->
+        <div class="crystal crystal-hero crystal-hero-main crystal-hexagon crystal-large crystal-float" style="top: 10%; right: 8%; opacity: 0.25; z-index: 1;"></div>
+        <div class="crystal crystal-hero crystal-diamond crystal-float-slow" style="top: 40%; left: 5%; opacity: 0.2; z-index: 1; width: 100px; height: 100px;"></div>
+        <div class="crystal crystal-hero crystal-prism crystal-float-drift" style="bottom: 15%; right: 15%; opacity: 0.22; z-index: 1;"></div>
+        <div class="container">
+            <div class="hero-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-48); align-items: center;">
+                <div style="text-align: left;" class="slide-in-left">
+                    <h1 id="heroText" style="text-align: left;"></h1>
+                    <p style="text-align: left;">From mobile apps to enterprise software, we bring innovation and excellence to every project with our expert team of developers</p>
+                    <div class="hero-buttons" style="justify-content: flex-start;">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#projects" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">View Projects</a>
+                    </div>
+                    <div style="display: flex; gap: var(--space-32); margin-top: var(--space-32); flex-wrap: wrap;">
+                        <div><strong style="font-size: var(--font-size-xl);">98%</strong><br><span style="opacity: 0.9;">Client Satisfaction</span></div>
+                        <div><strong style="font-size: var(--font-size-xl);">150+</strong><br><span style="opacity: 0.9;">Projects</span></div>
+                        <div><strong style="font-size: var(--font-size-xl);">24/7</strong><br><span style="opacity: 0.9;">Support</span></div>
+                    </div>
+                </div>
+                <div style="position: relative;" class="slide-in-right">
+                    <div class="hero-image-container" id="heroImageContainer">
+                        <!-- Floating decorative particles -->
+                        <div class="hero-particle"></div>
+                        <div class="hero-particle"></div>
+                        <div class="hero-particle"></div>
+                        <div class="hero-particle"></div>
+                        <div class="hero-particle"></div>
+                        <div class="hero-particle"></div>
+                        
+                        <div class="hero-image-wrapper">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1754650289/pplx_project_search_images/d3e0a8ac3132a9093f83397b308f74562e625d4b.png" alt="Software development team working together" class="hero-image" id="heroImage">
+                            <div class="hero-image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="var(--color-background)"></path>
+    </svg>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who We Are</h2>
+                <p class="section-subtitle">AppDost is your partner for complete digital transformation. Founded in 2025, we are a full-service IT solutions provider specializing in turning innovative ideas into powerful, market-ready products.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-48); align-items: center; margin-bottom: var(--space-48);">
+                <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754693279/pplx_project_search_images/772448d5c52cb24fd686e75fb2d9f6df58703c3b.png" alt="Modern office workspace with technology" style="width: 100%; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div>
+                    <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--space-24);">Our expertise spans the entire development lifecycle, from intuitive UI/UX design to robust software development and ongoing support.</p>
+                    <div style="display: grid; gap: var(--space-16);">
+                        <div style="display: flex; gap: var(--space-16); align-items: start;">
+                            <span style="font-size: 2rem;">🎯</span>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-8);">User-Centric Design</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0;">Intuitive UI/UX that guarantees user satisfaction and engagement</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: var(--space-16); align-items: start;">
+                            <span style="font-size: 2rem;">⚡</span>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-8);">Modern Technology</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0;">Latest frameworks and tools for scalable, robust solutions</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: var(--space-16); align-items: start;">
+                            <span style="font-size: 2rem;">🤝</span>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-8);">Client Success</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0;">Your success is our priority, every step of the way</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: rgba(147, 51, 234, 0.08);"></path>
+    </svg>
+    
+    <!-- Why Choose AppDost Section -->
+    <section id="why-choose" class="section" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(236, 72, 153, 0.08)); position: relative; overflow: hidden;">
+        <div class="crystal crystal-hexagon crystal-small crystal-float" style="top: 12%; left: 6%; opacity: 0.2; z-index: 0; width: 45px; height: 45px;"></div>
+        <div class="crystal crystal-diamond crystal-small crystal-sparkle" style="top: 60%; right: 8%; opacity: 0.18; z-index: 0;"></div>
+        <div class="crystal crystal-prism crystal-small crystal-shimmer" style="bottom: 15%; left: 12%; opacity: 0.15; z-index: 0;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose AppDost?</h2>
+                <p class="section-subtitle">We combine expertise, innovation, and dedication to deliver exceptional results that exceed expectations</p>
+            </div>
+            <div class="grid grid-4" style="gap: var(--space-24);">
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">👥</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #0066FF;">Expert Team</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">50+ skilled developers, designers, and strategists with years of industry experience delivering world-class solutions</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">🏆</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #10B981;">Proven Track Record</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">150+ successful projects delivered across various industries with 98% client satisfaction rate</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">🤝</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #8B5CF6;">Client-Centric Approach</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">Your success is our priority. We work closely with you at every step to ensure your vision comes to life</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">🚀</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #06B6D4;">Cutting-Edge Technology</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">We leverage the latest frameworks, tools, and best practices to build modern, scalable solutions</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">⏰</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #F59E0B;">On-Time Delivery</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">We respect deadlines and deliver projects on schedule without compromising on quality</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">🛡️</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #EC4899;">24/7 Support</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">Round-the-clock technical support and maintenance to keep your systems running smoothly</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">💬</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #3B82F6;">Transparent Communication</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">Regular updates, clear documentation, and open communication throughout the entire project lifecycle</p>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 253, 0.7); text-align: center; padding: var(--space-32); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="font-size: 3.5rem; margin-bottom: var(--space-20); display: block;">💰</div>
+                    <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-xl); color: #EF4444;">Competitive Pricing</h4>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin: 0;">Premium quality at affordable rates with flexible payment options tailored to your budget</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: rgba(59, 130, 246, 0.08);"></path>
+    </svg>
+    
+    <!-- Stats Section -->
+    <section class="section-sm" style="background: var(--color-bg-1); position: relative; overflow: hidden;">
+        <div class="crystal crystal-diamond crystal-small crystal-sparkle" style="top: 20%; left: 8%; opacity: 0.25; z-index: 1;"></div>
+        <div class="crystal crystal-hexagon crystal-small crystal-shimmer" style="top: 60%; right: 10%; opacity: 0.25; z-index: 1; width: 35px; height: 35px;"></div>
+        <div class="crystal crystal-prism crystal-small crystal-pulse" style="bottom: 20%; left: 15%; opacity: 0.2; z-index: 1;"></div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-label">% Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">+ Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">48hr</span>
+                    <span class="stat-label">Turnaround Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="var(--color-background)"></path>
+    </svg>
+    
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p class="section-subtitle">We deliver end-to-end IT solutions that drive business growth and digital transformation</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1757141044/pplx_project_search_images/c6272694aa5f581e31c1e21040da6095f672081f.png" alt="Mobile app development" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">📱</span>
+                            <h4>Android Development</h4>
+                            <p>Custom Android applications built with the latest technologies to bring your ideas to life</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">Android Development</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>Native &amp; Hybrid Apps</li>
+                                <li>Kotlin &amp; Java</li>
+                                <li>Material Design</li>
+                                <li>Play Store Publishing</li>
+                                <li>Performance Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1757357210/pplx_project_search_images/ac1d578d1137281bbe7e4643dc12d4be142fca8e.png" alt="Web development dashboard" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">🌐</span>
+                            <h4>Web Development</h4>
+                            <p>Responsive and scalable web applications tailored to your business needs</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">Web Development</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>React &amp; Vue.js</li>
+                                <li>Node.js Backend</li>
+                                <li>Progressive Web Apps</li>
+                                <li>RESTful APIs</li>
+                                <li>Database Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755360191/pplx_project_search_images/7d8ddd1c87d128587ee1b228ca3e16d98f40e3ec.png" alt="UI/UX design process" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">🎨</span>
+                            <h4>UI/UX Design</h4>
+                            <p>Beautiful, intuitive user interfaces that enhance user experience and engagement</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">UI/UX Design</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>User Research</li>
+                                <li>Wireframing &amp; Prototyping</li>
+                                <li>Visual Design</li>
+                                <li>Usability Testing</li>
+                                <li>Design Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1754694445/pplx_project_search_images/5902d45e9097b4a100b1f6d2b6716ee6cff37267.png" alt="CRM dashboard analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">📊</span>
+                            <h4>CRM Solutions</h4>
+                            <p>Comprehensive CRM solutions to manage customer relationships and boost productivity</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">CRM Solutions</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>Custom CRM Development</li>
+                                <li>Sales Automation</li>
+                                <li>Customer Analytics</li>
+                                <li>Integration Services</li>
+                                <li>Mobile CRM Access</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755851640/pplx_project_search_images/daa15bcfdbfed247ffb7ff5371e47c84c53f52ed.png" alt="Cloud computing technology" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">☁️</span>
+                            <h4>Cloud Services</h4>
+                            <p>Scalable cloud infrastructure and migration services for modern businesses</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">Cloud Services</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>AWS &amp; Azure</li>
+                                <li>Cloud Migration</li>
+                                <li>DevOps &amp; CI/CD</li>
+                                <li>Serverless Architecture</li>
+                                <li>Cloud Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card service-card" onclick="toggleFlip(this)" style="position: relative;">
+                    <div class="service-card-crystal"></div>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755575216/pplx_project_search_images/ea5aa1d412af6dc629332a7267dbc820d85a33ec.png" alt="Cybersecurity network protection" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                            <span class="service-icon">🔒</span>
+                            <h4>Cybersecurity</h4>
+                            <p>Protect your business with robust security solutions and best practices</p>
+                        </div>
+                        <div class="service-card-back">
+                            <h4 style="margin-bottom: var(--space-16);">Cybersecurity</h4>
+                            <ul style="text-align: left; padding-left: var(--space-20);">
+                                <li>Security Audits</li>
+                                <li>Penetration Testing</li>
+                                <li>Data Encryption</li>
+                                <li>Compliance Management</li>
+                                <li>Incident Response</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: rgba(245, 158, 11, 0.08);"></path>
+    </svg>
+    
+    <!-- Process Section -->
+    <section id="process" class="section" style="background: var(--color-bg-2); position: relative; overflow: hidden;">
+        <div class="crystal crystal-diamond crystal-float-slow" style="top: 15%; right: 8%; opacity: 0.2; z-index: 0; width: 70px; height: 70px;"></div>
+        <div class="crystal crystal-hexagon crystal-float-drift" style="bottom: 20%; left: 5%; opacity: 0.18; z-index: 0; width: 65px; height: 65px;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p class="section-subtitle">A proven methodology that ensures quality, efficiency, and client satisfaction</p>
+            </div>
+            <div class="grid grid-2" style="gap: var(--space-40);">
+                <div class="card" style="padding: var(--space-40); background: rgba(255, 255, 253, 0.7); position: relative; overflow: visible;">
+                    <div style="position: absolute; top: -20px; left: var(--space-40); width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0066FF, #06B6D4); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(0, 102, 255, 0.3); z-index: 10;">
+                        <span style="font-size: 3rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">🔍</span>
+                    </div>
+                    <div style="margin-top: var(--space-48);">
+                        <h3 style="font-size: 1.75rem; margin-bottom: var(--space-20); color: var(--color-text); font-weight: 700;">Discovery &amp; Planning</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-lg); margin: 0;">We analyze your requirements, understand your business goals, research competitors, and create a comprehensive project roadmap with clear milestones and deliverables</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: var(--space-40); background: rgba(255, 255, 253, 0.7); position: relative; overflow: visible;">
+                    <div style="position: absolute; top: -20px; left: var(--space-40); width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #8B5CF6, #EC4899); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3); z-index: 10;">
+                        <span style="font-size: 3rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">✏️</span>
+                    </div>
+                    <div style="margin-top: var(--space-48);">
+                        <h3 style="font-size: 1.75rem; margin-bottom: var(--space-20); color: var(--color-text); font-weight: 700;">Design &amp; Prototype</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-lg); margin: 0;">Our design team creates intuitive wireframes, stunning UI mockups, and interactive prototypes that bring your vision to life before development begins</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: var(--space-40); background: rgba(255, 255, 253, 0.7); position: relative; overflow: visible;">
+                    <div style="position: absolute; top: -20px; left: var(--space-40); width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #06B6D4, #10B981); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(6, 182, 212, 0.3); z-index: 10;">
+                        <span style="font-size: 3rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">💻</span>
+                    </div>
+                    <div style="margin-top: var(--space-48);">
+                        <h3 style="font-size: 1.75rem; margin-bottom: var(--space-20); color: var(--color-text); font-weight: 700;">Development &amp; Testing</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-lg); margin: 0;">Expert developers write clean, scalable code while our QA team performs rigorous testing to ensure flawless functionality across all devices and platforms</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: var(--space-40); background: rgba(255, 255, 253, 0.7); position: relative; overflow: visible;">
+                    <div style="position: absolute; top: -20px; left: var(--space-40); width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #10B981, #059669); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3); z-index: 10;">
+                        <span style="font-size: 3rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">🚀</span>
+                    </div>
+                    <div style="margin-top: var(--space-48);">
+                        <h3 style="font-size: 1.75rem; margin-bottom: var(--space-20); color: var(--color-text); font-weight: 700;">Deployment &amp; Support</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-lg); margin: 0;">We handle the complete deployment process and provide ongoing maintenance, updates, and 24/7 technical support to keep your solution running smoothly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="var(--color-background)"></path>
+    </svg>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work</h2>
+                <p class="section-subtitle">Real solutions for real businesses - explore our successful projects</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card project-card" style="min-height: 600px;">
+                    <div class="project-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1756407922/pplx_project_search_images/a5823838dfac00ed68aef95e8d86ede66c791a97.png" alt="E-commerce dashboard">
+                    </div>
+                    <span style="display: inline-block; padding: var(--space-6) var(--space-12); background: #EC4899; color: white; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-12);">E-Commerce Development</span>
+                    <h3 style="margin-bottom: var(--space-12); font-size: var(--font-size-2xl);">ShopHub E-Commerce</h3>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-16);">Complete e-commerce platform with real-time inventory management, advanced analytics dashboard, payment gateway integration, and seamless checkout experience. Built for scalability and performance with modern technologies.</p>
+                    <div style="margin-bottom: var(--space-16);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-text); display: block; margin-bottom: var(--space-8);">Tech Stack:</strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--space-8);">
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">React</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Node.js</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">MongoDB</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Stripe</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">AWS</span>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-12); background: var(--color-bg-3); border-radius: var(--radius-base); border-left: 3px solid var(--color-success);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-success); display: block; margin-bottom: var(--space-4);">Results:</strong>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary);">300% increase in online sales, 50% faster checkout process</p>
+                    </div>
+                </div>
+                <div class="card project-card" style="min-height: 600px;">
+                    <div class="project-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755046773/pplx_project_search_images/3bd59fe10afa86d695221d7277f8b99a8711d5f4.png" alt="Healthcare mobile app">
+                    </div>
+                    <span style="display: inline-block; padding: var(--space-6) var(--space-12); background: #10B981; color: white; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-12);">Mobile App Development</span>
+                    <h3 style="margin-bottom: var(--space-12); font-size: var(--font-size-2xl);">HealthTrack Mobile App</h3>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-16);">Comprehensive healthcare mobile application featuring telemedicine capabilities, appointment scheduling, health monitoring, prescription management, and secure patient-doctor communication. Designed with user privacy and HIPAA compliance in mind.</p>
+                    <div style="margin-bottom: var(--space-16);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-text); display: block; margin-bottom: var(--space-8);">Tech Stack:</strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--space-8);">
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">React Native</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Firebase</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">WebRTC</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Node.js</span>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-12); background: var(--color-bg-3); border-radius: var(--radius-base); border-left: 3px solid var(--color-success);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-success); display: block; margin-bottom: var(--space-4);">Results:</strong>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary);">50K+ active users, 4.8-star rating, 80% user retention</p>
+                    </div>
+                </div>
+                <div class="card project-card" style="min-height: 600px;">
+                    <div class="project-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1757469092/pplx_project_search_images/71356ce1004f60625dc69b3469d5683d06bad38b.png" alt="Financial analytics dashboard">
+                    </div>
+                    <span style="display: inline-block; padding: var(--space-6) var(--space-12); background: #0066FF; color: white; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-12);">Data Analytics &amp; Visualization</span>
+                    <h3 style="margin-bottom: var(--space-12); font-size: var(--font-size-2xl);">FinanceView Dashboard</h3>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-16);">Real-time financial analytics platform with interactive data visualization, custom reporting, predictive analytics, and multi-source data integration. Empowers financial institutions with actionable insights and automated reporting.</p>
+                    <div style="margin-bottom: var(--space-16);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-text); display: block; margin-bottom: var(--space-8);">Tech Stack:</strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--space-8);">
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Next.js</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Python</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">PostgreSQL</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">D3.js</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Docker</span>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-12); background: var(--color-bg-3); border-radius: var(--radius-base); border-left: 3px solid var(--color-success);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-success); display: block; margin-bottom: var(--space-4);">Results:</strong>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary);">70% reduction in reporting time, $500K cost savings annually</p>
+                    </div>
+                </div>
+                <div class="card project-card" style="min-height: 600px;">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop" alt="AI Chatbot Assistant">
+                    </div>
+                    <span style="display: inline-block; padding: var(--space-6) var(--space-12); background: #F59E0B; color: white; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-12);">Artificial Intelligence</span>
+                    <h3 style="margin-bottom: var(--space-12); font-size: var(--font-size-2xl);">AI ChatBot Assistant</h3>
+                    <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-16);">Intelligent chatbot powered by natural language processing for automated customer support, lead qualification, and 24/7 assistance. Learns from interactions to provide increasingly accurate responses and seamless handoff to human agents.</p>
+                    <div style="margin-bottom: var(--space-16);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-text); display: block; margin-bottom: var(--space-8);">Tech Stack:</strong>
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--space-8);">
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Python</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">TensorFlow</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">FastAPI</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">React</span>
+                            <span style="padding: var(--space-4) var(--space-10); background: var(--color-bg-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);">Redis</span>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-12); background: var(--color-bg-3); border-radius: var(--radius-base); border-left: 3px solid var(--color-success);">
+                        <strong style="font-size: var(--font-size-sm); color: var(--color-success); display: block; margin-bottom: var(--space-4);">Results:</strong>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary);">80% reduction in support tickets, 95% user satisfaction score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: rgba(34, 197, 94, 0.08);"></path>
+    </svg>
+    
+    <!-- Technologies Section -->
+    <section id="technologies" class="section" style="background: var(--color-bg-3); position: relative; overflow: hidden;">
+        <div class="crystal crystal-diamond crystal-small crystal-rotate" style="top: 10%; right: 12%; opacity: 0.2; z-index: 0;"></div>
+        <div class="crystal crystal-hexagon crystal-small crystal-float" style="bottom: 15%; left: 10%; opacity: 0.2; z-index: 0; width: 40px; height: 40px;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Technologies We Use</h2>
+                <p class="section-subtitle">We leverage cutting-edge technologies to build robust, scalable, and innovative solutions</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">React</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">MongoDB</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Kubernetes</div>
+                <div class="tech-item">TailwindCSS</div>
+                <div class="tech-item">TypeScript</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="var(--color-background)"></path>
+    </svg>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(139, 92, 246, 0.05)); position: relative; overflow: hidden;">
+        <div class="crystal crystal-hexagon crystal-small crystal-float-slow" style="top: 20%; right: 10%; opacity: 0.2; z-index: 0; width: 50px; height: 50px;"></div>
+        <div class="crystal crystal-diamond crystal-small crystal-sparkle" style="bottom: 25%; left: 8%; opacity: 0.15; z-index: 0;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from our satisfied clients</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0066FF, #8B5CF6); margin: 0 auto var(--space-24); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);">👨‍💼</div>
+                    <div style="color: #F59E0B; font-size: 1.5rem; margin-bottom: var(--space-16);">★★★★★</div>
+                    <p style="font-size: var(--font-size-lg); font-style: italic; color: var(--color-text-secondary); margin-bottom: var(--space-24);">&quot;Working with AppDost was an absolute pleasure. They transformed our outdated system into a modern, efficient platform. The team's expertise and dedication are unmatched.&quot;</p>
+                    <h4 style="margin-bottom: var(--space-4);">Rajesh Kumar</h4>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin: 0;">CEO, TechVision Inc</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #EC4899, #8B5CF6); margin: 0 auto var(--space-24); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);">👩‍💼</div>
+                    <div style="color: #F59E0B; font-size: 1.5rem; margin-bottom: var(--space-16);">★★★★★</div>
+                    <p style="font-size: var(--font-size-lg); font-style: italic; color: var(--color-text-secondary); margin-bottom: var(--space-24);">&quot;The mobile app they developed exceeded all our expectations. Our patient engagement has increased by 200% and the feedback has been overwhelmingly positive.&quot;</p>
+                    <h4 style="margin-bottom: var(--space-4);">Priya Sharma</h4>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin: 0;">Founder, HealthFirst</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #06B6D4, #0066FF); margin: 0 auto var(--space-24); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);">👨‍💻</div>
+                    <div style="color: #F59E0B; font-size: 1.5rem; margin-bottom: var(--space-16);">★★★★★</div>
+                    <p style="font-size: var(--font-size-lg); font-style: italic; color: var(--color-text-secondary); margin-bottom: var(--space-24);">&quot;AppDost delivered a complex analytics platform on time and within budget. Their technical skills and project management are world-class.&quot;</p>
+                    <h4 style="margin-bottom: var(--space-4);">Amit Patel</h4>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin: 0;">CTO, FinanceHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="var(--color-background)"></path>
+    </svg>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Insights</h2>
+                <p class="section-subtitle">Stay informed with our latest insights, tech trends, and industry expertise</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card blog-card">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754919609/pplx_project_search_images/085411a6b98c2c69c425669813e20ea6bf0284ff.png" alt="Web development trends" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                    <span style="display: inline-block; padding: var(--space-4) var(--space-12); background: var(--color-bg-1); border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); margin-bottom: var(--space-12);">Web Development</span>
+                    <h4>The Future of Web Development in 2025</h4>
+                    <p>Exploring the latest trends and technologies shaping the future of web development</p>
+                    <div style="margin-top: var(--space-16); padding-top: var(--space-16); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+                        <small style="color: var(--color-text-secondary);">October 20, 2025 • 5 min read</small>
+                        <a href="#" class="btn btn-outline btn-sm" style="padding: var(--space-6) var(--space-12); font-size: var(--font-size-sm);">Read More</a>
+                    </div>
+                </div>
+                <div class="card blog-card">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754762433/pplx_project_search_images/5305b55ea44280fbb484477865634a3c7c0948bb.png" alt="Mobile app security" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                    <span style="display: inline-block; padding: var(--space-4) var(--space-12); background: var(--color-bg-4); border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); margin-bottom: var(--space-12);">Mobile Development</span>
+                    <h4>Best Practices for Mobile App Security</h4>
+                    <p>Essential security measures every mobile app developer should implement</p>
+                    <div style="margin-top: var(--space-16); padding-top: var(--space-16); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+                        <small style="color: var(--color-text-secondary);">October 15, 2025 • 7 min read</small>
+                        <a href="#" class="btn btn-outline btn-sm" style="padding: var(--space-6) var(--space-12); font-size: var(--font-size-sm);">Read More</a>
+                    </div>
+                </div>
+                <div class="card blog-card">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1757746416/pplx_project_search_images/cc24572b9a3ccebdd63bc3024b0b5a92b28405e7.png" alt="Cloud migration" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-base); margin-bottom: var(--space-16);">
+                    <span style="display: inline-block; padding: var(--space-4) var(--space-12); background: var(--color-bg-8); border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); margin-bottom: var(--space-12);">Cloud Services</span>
+                    <h4>Cloud Migration Guide for SMBs</h4>
+                    <p>A comprehensive guide to migrating your business infrastructure to the cloud</p>
+                    <div style="margin-top: var(--space-16); padding-top: var(--space-16); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+                        <small style="color: var(--color-text-secondary);">October 10, 2025 • 10 min read</small>
+                        <a href="#" class="btn btn-outline btn-sm" style="padding: var(--space-6) var(--space-12); font-size: var(--font-size-sm);">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: rgba(239, 68, 68, 0.08);"></path>
+    </svg>
+    
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="section" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%); position: relative; overflow: hidden;">
+        <div class="crystal crystal-hexagon crystal-large crystal-pulse crystal-glow" style="top: 10%; left: 8%; opacity: 0.25; z-index: 1;"></div>
+        <div class="crystal crystal-diamond crystal-large crystal-shimmer crystal-glow" style="bottom: 10%; right: 8%; opacity: 0.25; z-index: 1; width: 110px; height: 110px;"></div>
+        <div class="crystal crystal-prism crystal-float-slow" style="top: 50%; right: 15%; opacity: 0.2; z-index: 1; filter: drop-shadow(0 8px 32px rgba(102, 126, 234, 0.3));"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-size: 4rem; margin-bottom: var(--space-24);">Ready to Transform Your Digital Presence?</h2>
+                <p class="section-subtitle" style="font-size: var(--font-size-xl); margin-bottom: var(--space-32);">Let's build something amazing together. Start your journey to digital excellence today.</p>
+                <div style="display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; margin-top: var(--space-40);">
+                    <a href="mailto:hr@appdost.in" class="btn btn-primary" style="padding: var(--space-20) var(--space-40); font-size: var(--font-size-xl); font-weight: 700; border-radius: var(--radius-full); box-shadow: 0 12px 40px rgba(0, 102, 255, 0.4);">Start Your Project →</a>
+                    <a href="#projects" class="btn btn-outline" style="padding: var(--space-20) var(--space-40); font-size: var(--font-size-xl); font-weight: 600; border-radius: var(--radius-full); background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px);">View Portfolio</a>
+                </div>
+                <p style="margin-top: var(--space-32); color: var(--color-text-secondary); font-size: var(--font-size-base);">Or email us at <a href="mailto:hr@appdost.in" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">hr@appdost.in</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <svg style="display: block; width: 100%; height: 60px; transform: translateY(1px) rotate(180deg);" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#1f2121"></path>
+    </svg>
+    
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(135deg, #1f2121 0%, #0f1111 100%); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%); pointer-events: none;"></div>
+        <div class="container">
+            <div class="footer-content" style="position: relative; z-index: 1;">
+                <div>
+                    <div class="logo" style="color: white; margin-bottom: var(--space-16); font-size: 2rem; background: linear-gradient(135deg, #0066FF, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AppDost</div>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-24); line-height: 1.6;">Building Digital Excellence.<br>Your trusted partner for comprehensive IT solutions.</p>
+                    <div class="social-links" style="margin-top: var(--space-20);">
+                        <a href="#" class="social-link" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #0066FF, #8B5CF6)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">in</a>
+                        <a href="#" class="social-link" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #0066FF, #8B5CF6)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">tw</a>
+                        <a href="#" class="social-link" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #0066FF, #8B5CF6)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">gh</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: var(--space-20); font-weight: 700; font-size: var(--font-size-lg);">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: var(--space-12);"><a href="#about" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0066FF'; this.style.transform='translateX(4px)';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'; this.style.transform='translateX(0)';">→ About</a></li>
+                        <li style="margin-bottom: var(--space-12);"><a href="#services" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0066FF'; this.style.transform='translateX(4px)';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'; this.style.transform='translateX(0)';">→ Services</a></li>
+                        <li style="margin-bottom: var(--space-12);"><a href="#projects" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0066FF'; this.style.transform='translateX(4px)';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'; this.style.transform='translateX(0)';">→ Projects</a></li>
+                        <li style="margin-bottom: var(--space-12);"><a href="#contact" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0066FF'; this.style.transform='translateX(4px)';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'; this.style.transform='translateX(0)';">→ Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: var(--space-20); font-weight: 700; font-size: var(--font-size-lg);">Contact Info</h4>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-12); line-height: 1.8;">📧 <a href="mailto:hr@appdost.in" style="color: white; font-weight: 600; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#0066FF';" onmouseout="this.style.color='white';">hr@appdost.in</a></p>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-12); line-height: 1.8;">📞 +91 9876543210</p>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-12); line-height: 1.8;">📍 Bangalore, India</p>
+                    <p style="color: rgba(255, 255, 255, 0.5); font-size: var(--font-size-sm); margin-top: var(--space-20);">Est. 2025</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-16);">
+                <p style="margin: 0;">&copy; 2025 AppDost. All rights reserved. Built with 💙 by AppDost Team.</p>
+                <div style="display: flex; gap: var(--space-24);">
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); font-size: var(--font-size-sm); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#0066FF';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)';">Privacy Policy</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); font-size: var(--font-size-sm); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#0066FF';" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)';">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Typing effect for hero
+        const heroText = document.getElementById('heroText');
+        const text = 'Your trusted partner for comprehensive IT solutions';
+        let index = 0;
+        
+        function typeWriter() {
+            if (index < text.length) {
+                heroText.textContent = text.substring(0, index + 1);
+                index++;
+                setTimeout(typeWriter, 50);
+            } else {
+                // Add cursor after typing completes
+                const cursor = document.createElement('span');
+                cursor.className = 'typing-cursor';
+                heroText.appendChild(cursor);
+            }
+        }
+        
+        // Loading screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.visibility = 'hidden';
+                
+                // Start typing effect after loading completes
+                setTimeout(typeWriter, 300);
+            }, 2000);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animated counters for stats
+        let countersAnimated = false;
+        
+        function animateCounters() {
+            if (countersAnimated) return;
+            countersAnimated = true;
+            
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Toggle flip for service cards
+        function toggleFlip(card) {
+            card.classList.toggle('flipped');
+        }
+
+
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation for stats section
+                    if (entry.target.querySelector('.stat-number[data-target]')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('animate-on-scroll');
+            observer.observe(section);
+        });
+
+        // Magnetic effect for large buttons (desktop only)
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.btn-primary').forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const deltaX = (x - centerX) / centerX;
+                    const deltaY = (y - centerY) / centerY;
+                    
+                    element.style.transform = `perspective(1000px) rotateY(${deltaX * 3}deg) rotateX(${-deltaY * 3}deg) translateY(-2px) scale(1.05)`;
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    element.style.transform = '';
+                });
+            });
+        }
+        
+        // Enhanced parallax effect for hero image with smooth transform
+        const heroImage = document.getElementById('heroImage');
+        const heroImageContainer = document.getElementById('heroImageContainer');
+        
+        if (heroImage && heroImageContainer) {
+            let ticking = false;
+            
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY < window.innerHeight) {
+                            const scrolled = window.scrollY;
+                            const parallaxSpeed = 0.3;
+                            const rotation = scrolled * 0.02; // Subtle rotation on scroll
+                            
+                            // Apply parallax to inner image
+                            heroImage.style.transform = `scale(1.05) translateY(${scrolled * parallaxSpeed}px)`;
+                            
+                            // Apply counter-movement to container for depth effect
+                            heroImageContainer.style.transform = `translateY(${scrolled * -0.15}px) rotate(${rotation}deg)`;
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            
+            // Add 3D tilt effect on mouse move (desktop only)
+            if (window.innerWidth > 768) {
+                heroImageContainer.addEventListener('mousemove', (e) => {
+                    const rect = heroImageContainer.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / centerY * -5; // Max 5 degrees
+                    const rotateY = (x - centerX) / centerX * 5;
+                    
+                    heroImageContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.05)`;
+                });
+                
+                heroImageContainer.addEventListener('mouseleave', () => {
+                    heroImageContainer.style.transform = '';
+                });
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 100) {
+                navbar.style.background = 'rgba(255, 255, 253, 0.85)';
+                navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
+                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.08)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 253, 0.7)';
+                navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
+                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.06)';
+            }
+            
+            // Hide/show navbar on scroll
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+        
+        // Support button - scroll to contact section
+        const supportButton = document.getElementById('supportButton');
+        
+        supportButton.addEventListener('click', () => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = contactSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Add pulse animation on click
+                supportButton.style.animation = 'pulse 0.5s ease';
+                setTimeout(() => {
+                    supportButton.style.animation = '';
+                }, 500);
+            }
+        });
+        
+        // Add hover tooltip effect
+        const tooltip = document.createElement('div');
+        tooltip.textContent = 'Need Help? Contact Support';
+        tooltip.style.cssText = `
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        `;
+        document.body.appendChild(tooltip);
+        
+        supportButton.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = '1';
+        });
+        
+        supportButton.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+        });
+        
+        // Responsive tooltip positioning on mobile
+        if (window.innerWidth <= 768) {
+            tooltip.style.bottom = '74px';
+            tooltip.style.right = '16px';
+        }
+        
+        // Floating CTA button - show on scroll
+        const floatingCTA = document.getElementById('floatingCTA');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                floatingCTA.classList.add('visible');
+            } else {
+                floatingCTA.classList.remove('visible');
+            }
+        });
+        
+        // Parallax effect for ambient crystals
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.scrollY;
+                    const crystals = document.querySelectorAll('.crystal-ambient');
+                    
+                    crystals.forEach((crystal, index) => {
+                        const speed = 0.1 + (index * 0.05);
+                        const yPos = -(scrolled * speed);
+                        crystal.style.transform = `translateY(${yPos}px)`;
+                    });
+                    
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        // Enhanced scroll animations with stagger
+        const animateOnScrollOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const animateObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, animateOnScrollOptions);
+        
+        // Animate cards in grid with stagger
+        document.querySelectorAll('.grid .card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            animateObserver.observe(card);
+        });
+        
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Lazy load images with fade-in effect
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.6s ease';
+                    
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                    
+                    setTimeout(() => {
+                        img.style.opacity = '1';
+                    }, 100);
+                    
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img').forEach(img => {
+            imageObserver.observe(img);
+        });
+        
+        // Add smooth reveal animation to section titles
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+                    titleObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.section-title h2').forEach(title => {
+            title.style.opacity = '0';
+            titleObserver.observe(title);
+        });
+        
+        // Add keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close mobile menu
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Performance optimization: Reduce animations on low-end devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+            document.documentElement.style.setProperty('--duration-normal', '150ms');
+            document.documentElement.style.setProperty('--duration-fast', '100ms');
+        }
+    </script>
+</body>
+</html>
